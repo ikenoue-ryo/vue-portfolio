@@ -2,7 +2,7 @@
   <div class="back_body">
     <AppHeader />
 
-    <h2>Let's SignUp</h2>
+    <h2>Let's Login</h2>
     <v-card
       class="card_style"
       max-width="800"
@@ -18,32 +18,6 @@
                   md="12"
                 >
                   <v-text-field
-                    v-model="firstname"
-                    :rules="nameRules"
-                    :counter="10"
-                    label="First name"
-                    required
-                  ></v-text-field>
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="12"
-                >
-                  <v-text-field
-                    v-model="lastname"
-                    :rules="nameRules"
-                    :counter="10"
-                    label="Last name"
-                    required
-                  ></v-text-field>
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="12"
-                >
-                  <v-text-field
                     v-model="email"
                     :rules="emailRules"
                     label="E-mail"
@@ -51,9 +25,21 @@
                   ></v-text-field>
                 </v-col>
 
+                <v-col
+                  cols="12"
+                  md="12"
+                >
+                  <v-text-field
+                    v-model="password"
+                    :rules="emailRules"
+                    label="Password"
+                    required
+                  ></v-text-field>
+                </v-col>
+
               </v-row>
               <div class="back-color">
-                  <v-btn href="profile" class="start">この内容ではじめる</v-btn>
+                  <v-btn href="signup" class="start">ログイン</v-btn>
               </div>
             </v-container>
           </v-flex>

@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <div class="back-color">
-          <v-btn href="profile" class="start">はじめる</v-btn>
+          <v-btn href="signup" class="start">はじめる</v-btn>
         </div>
       </v-toolbar-items>
     </v-layout>

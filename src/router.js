@@ -2,7 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Top from './pages/Top'
-import Profile from './pages/ProfilePage'
+import SignUp from './pages/SignUp'
+import Login from './pages/Login'
 
 
 Vue.use(Router);
@@ -15,8 +16,12 @@ const router = new Router({
       component: Top,
     },
     { 
-      path: '/profile', 
-      component: Profile,
+      path: '/signup', 
+      component: SignUp,
+    },
+    { 
+      path: '/login', 
+      component: Login,
     },
   
   ]

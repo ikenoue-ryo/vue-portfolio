@@ -1,16 +1,16 @@
 <template>
   <div>
-    <Profile />
+    <SignUp />
   </div>
 </template>
 
 
 <script>
-import Profile from '../components/Profile'
+import SignUp from '../components/SignUp'
 
 export default{
   components:{
-    Profile,
+    SignUp,
   }
 
 }
