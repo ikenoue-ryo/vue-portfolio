@@ -4,7 +4,7 @@
       <a href="/">CarShare</a>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <div class="my-2 back-color">
+        <div class="back-color">
           <v-btn href="profile" class="start">はじめる</v-btn>
         </div>
       </v-toolbar-items>
@@ -22,7 +22,7 @@ export default{
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 .header_class{
   background-color: #fff;
 
@@ -39,21 +39,19 @@ export default{
       color: #000;
       text-decoration: none;
     }
+
+    a.start{
+      background-color: #329eff!important;
+      font-size: 0.9rem;
+      color: #fff;
+      font-weight: bold;
+      margin-top: 8px;
+    }
   }
+
 }
 
 #app{
-  .back-color{
-    padding: 0 30px; 
-  }
-
-  a.start{
-    background-color: #329eff;
-    font-size: 0.9rem;
-    color: #fff;
-    font-weight: bold;
-  }
-
   .container {
     max-width: 100%;
   }

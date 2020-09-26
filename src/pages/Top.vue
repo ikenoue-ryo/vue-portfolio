@@ -42,4 +42,8 @@ export default{
 .container {
   max-width: 900px;
 }
+
+.fullheight {
+    height: 100%;
+}
 </style>

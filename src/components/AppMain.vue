@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-layout wrap>
+    <v-layout wrap class="main_img">
         <div>
           <v-carousel cycle interval="4000" class="rounded-lg">
             <v-carousel-item
@@ -52,6 +52,11 @@
 </script>
 
 <style lang="scss" scoped>
+.main_img{
+  width: 860px;
+  margin: 0 auto;
+}
+
 .post-car {
   position: relative;
   top: 0;
