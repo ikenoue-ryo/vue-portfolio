@@ -20,7 +20,7 @@
         </div>
     </v-layout>
     <div class="post-car">
-      <a href="/new" class="btn btn--circle user-post"><v-icon color="white">mdi-camera</v-icon></a>
+      <a href="/post" class="btn btn--circle user-post"><v-icon color="white">mdi-camera</v-icon></a>
     </div>
   </v-container>
 </template>
