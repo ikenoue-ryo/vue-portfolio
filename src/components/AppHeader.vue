@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <div class="my-2 back-color">
-          <v-btn class="start">はじめる</v-btn>
+          <v-btn href="profile" class="start">はじめる</v-btn>
         </div>
       </v-toolbar-items>
     </v-layout>
@@ -47,7 +47,7 @@ export default{
     padding: 0 30px; 
   }
 
-  button{
+  a.start{
     background-color: #329eff;
     font-size: 0.9rem;
     color: #fff;
