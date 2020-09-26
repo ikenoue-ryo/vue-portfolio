@@ -19,6 +19,9 @@
           </v-carousel>
         </div>
     </v-layout>
+    <div class="post-car">
+      <a href="/new" class="btn btn--circle user-post"><v-icon color="white">mdi-camera</v-icon></a>
+    </div>
   </v-container>
 </template>
 
@@ -48,7 +51,51 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.post-car {
+  position: relative;
+  top: 0;
+  right: 0;
+
+  i{
+    font-size: 3.0rem;
+    margin-left: 26px;
+  }
+}
+
+.post-car a.btn--circle {
+  border-radius: 50%;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  -webkit-box-shadow: 0 5px 0 #26a69a;
+  box-shadow: 0 5px 0 #26a69a;
+  background: #30cfc0;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.post-car a.btn--circle:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+  -webkit-box-shadow: 0 2px 0 #26a69a;
+  box-shadow: 0 2px 0 #26a69a;
+}
+
+.post-car a.user-post {
+  position: fixed;
+  bottom: 20px;
+  right: 110px;
+  z-index: 10;
+}
+
+.post-car .fa, .post-car .fas {
+  font-size: 2.5rem;
+  position: relative;
+  top: 9px;
+}
 
 
 </style>

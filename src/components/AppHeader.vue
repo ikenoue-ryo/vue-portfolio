@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <div class="my-2 back-color">
-          <v-btn>はじめる</v-btn>
+          <v-btn class="start">はじめる</v-btn>
         </div>
       </v-toolbar-items>
     </v-layout>
