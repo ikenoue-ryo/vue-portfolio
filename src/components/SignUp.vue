@@ -96,7 +96,6 @@ export default{
 .back_body{
   background-color: #eee;
   overflow: hidden;
-  height: 100vh;
   
 
   h2{

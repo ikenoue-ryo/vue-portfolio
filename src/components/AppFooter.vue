@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-app>
     <!-- Footer -->
     <footer class="page-footer font-small unique-color-dark pt-4">
       <!-- Footer Elements -->
@@ -28,6 +29,7 @@
 
     </footer>
     <!-- Footer -->
+    </v-app>
 
   </div>
 </template>

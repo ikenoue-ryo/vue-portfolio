@@ -10,91 +10,147 @@
           <li class="item mx-0">
             <a class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
               <v-col class="px-2">
-                <v-card class="py-3">
+                <v-hover
+                v-slot:default="{ hover }"
+                close-delay="200"
+              >
+                <v-card 
+                  class="py-3 { 'on-hover': hover }"
+                  :elevation="hover ? 12 : 2"
+                >
                   <v-img :src="`https://toyota.jp/pages/contents/corollasport/001_p_001/4.0/image/car-viewer/43_1_5/43_1_5_030_c.jpg`" width=280 height=160></v-img>
                   <div class="card-body">
                     <h3 class="my-3">カローラ</h3>
                     <p class="card-text text-uppercase">低燃費, 5人乗り, 駐無料</p>
                   </div>
                 </v-card>
+                </v-hover>
               </v-col>
             </a>
           </li>
           <li class="item mx-0">
             <a class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
               <v-col class="px-2">
-                <v-card class="py-3">
-                  <v-img :src="`https://toyota.jp/pages/contents/sienta/002_p_003/4.0/image/car-viewer/15_24_2/15_24_2_030_c.jpg`" width=280 height=160></v-img>
-                  <div class="card-body">
-                    <h3 class="my-3">シエンタ</h3>
-                    <p class="card-text text-uppercase">低燃費, 7人乗り</p>
-                  </div>
-                </v-card>
+                <v-hover
+                v-slot:default="{ hover }"
+                close-delay="200"
+              >
+                <v-card 
+                  class="py-3 { 'on-hover': hover }"
+                  :elevation="hover ? 12 : 2"
+                >
+                    <v-img :src="`https://toyota.jp/pages/contents/sienta/002_p_003/4.0/image/car-viewer/15_24_2/15_24_2_030_c.jpg`" width=280 height=160></v-img>
+                    <div class="card-body">
+                      <h3 class="my-3">シエンタ</h3>
+                      <p class="card-text text-uppercase">低燃費, 7人乗り</p>
+                    </div>
+                  </v-card>
+                </v-hover>
               </v-col>
             </a>
           </li>
           <li class="item mx-0">
             <a class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
               <v-col class="px-2">
-                <v-card class="py-3">
-                  <v-img :src="`https://toyota.jp/pages/contents/aqua/001_p_011/4.0/image/car-viewer/1_6_9/1_6_9_030_c.jpg`" width=280 height=160></v-img>
-                  <div class="card-body">
-                    <h3 class="my-3">アクア</h3>
-                    <p class="card-text text-uppercase">5人乗り, 駐無料</p>
-                  </div>
-                </v-card>
+                <v-hover
+                v-slot:default="{ hover }"
+                close-delay="200"
+                >
+                  <v-card 
+                    class="py-3 { 'on-hover': hover }"
+                    :elevation="hover ? 12 : 2"
+                  >
+                    <v-img :src="`https://toyota.jp/pages/contents/aqua/001_p_011/4.0/image/car-viewer/1_6_9/1_6_9_030_c.jpg`" width=280 height=160></v-img>
+                    <div class="card-body">
+                      <h3 class="my-3">アクア</h3>
+                      <p class="card-text text-uppercase">5人乗り, 駐無料</p>
+                    </div>
+                  </v-card>
+                </v-hover>
               </v-col>
             </a>
           </li>
           <li class="item mx-0">
             <a class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
               <v-col class="px-2">
-                <v-card class="py-3">
-                  <v-img :src="`https://toyota.jp/pages/contents/voxy/003_p_007/4.0/image/car-viewer/11_1_1/11_1_1_030_c.jpg`" width=280 height=160></v-img>
-                  <div class="card-body">
-                    <h3 class="my-3">ヴォクシー</h3>
-                    <p class="card-text text-uppercase">低燃費, 5人乗り, 駐無料</p>
-                  </div>
-                </v-card>
+                <v-hover
+                  v-slot:default="{ hover }"
+                  close-delay="200"
+                >
+                  <v-card 
+                    class="py-3 { 'on-hover': hover }"
+                    :elevation="hover ? 12 : 2"
+                  >
+                    <v-img :src="`https://toyota.jp/pages/contents/voxy/003_p_007/4.0/image/car-viewer/11_1_1/11_1_1_030_c.jpg`" width=280 height=160></v-img>
+                    <div class="card-body">
+                      <h3 class="my-3">ヴォクシー</h3>
+                      <p class="card-text text-uppercase">低燃費, 5人乗り, 駐無料</p>
+                    </div>
+                  </v-card>
+                </v-hover>
               </v-col>
             </a>
           </li>
           <li class="item mx-0">
             <a class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
               <v-col class="px-2">
-                <v-card class="py-3">
-                  <v-img :src="`https://toyota.jp/pages/contents/prius/004_p_007/4.0/image/car-viewer/24_5_7/24_5_7_030_c.jpg`" width=280 height=160></v-img>
-                  <div class="card-body">
-                    <h3 class="my-3">プリウス</h3>
-                    <p class="card-text text-uppercase">低燃費, 5人乗り</p>
-                  </div>
-                </v-card>
+                <v-hover
+                  v-slot:default="{ hover }"
+                  close-delay="200"
+                >
+                  <v-card 
+                    class="py-3 { 'on-hover': hover }"
+                    :elevation="hover ? 12 : 2"
+                  >
+                    <v-img :src="`https://toyota.jp/pages/contents/prius/004_p_007/4.0/image/car-viewer/24_5_7/24_5_7_030_c.jpg`" width=280 height=160></v-img>
+                    <div class="card-body">
+                      <h3 class="my-3">プリウス</h3>
+                      <p class="card-text text-uppercase">低燃費, 5人乗り</p>
+                    </div>
+                  </v-card>
+                </v-hover>
               </v-col>
             </a>
           </li>
           <li class="item mx-0">
             <a class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
               <v-col class="px-2">
-                <v-card class="py-3">
-                  <v-img :src="`https://toyota.jp/pages/contents/alphard/003_p_009/image/car-viewer/9_20_6/9_20_6_030_c.jpg`" width=280 height=160></v-img>
-                  <div class="card-body">
-                    <h3 class="my-3">アルファード</h3>
-                    <p class="card-text text-uppercase">低燃費, 5人乗り, 駐無料</p>
-                  </div>
-                </v-card>
+                <v-hover
+                  v-slot:default="{ hover }"
+                  close-delay="200"
+                >
+                  <v-card 
+                    class="py-3 { 'on-hover': hover }"
+                    :elevation="hover ? 12 : 2"
+                  >
+                    <v-img :src="`https://toyota.jp/pages/contents/alphard/003_p_009/image/car-viewer/9_20_6/9_20_6_030_c.jpg`" width=280 height=160></v-img>
+                    <div class="card-body">
+                      <h3 class="my-3">アルファード</h3>
+                      <p class="card-text text-uppercase">低燃費, 5人乗り, 駐無料</p>
+                    </div>
+                  </v-card>
+                </v-hover>
               </v-col>
             </a>
           </li>
           <li class="item mx-0">
             <a class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
               <v-col class="px-2">
-                <v-card class="py-3">
-                  <v-img :src="`https://toyota.jp/pages/contents/sienta/002_p_003/4.0/image/car-viewer/15_24_2/15_24_2_030_c.jpg`" width=280 height=160></v-img>
-                  <div class="card-body">
-                    <h3 class="my-3">シエンタ</h3>
-                    <p class="card-text text-uppercase">低燃費, 5人乗り, 駐無料</p>
-                  </div>
-                </v-card>
+                <v-hover
+                  v-slot:default="{ hover }"
+                  close-delay="200"
+                >
+                  <v-card 
+                    class="py-3 { 'on-hover': hover }"
+                    :elevation="hover ? 12 : 2"
+                  >
+                    <v-img :src="`https://toyota.jp/pages/contents/sienta/002_p_003/4.0/image/car-viewer/15_24_2/15_24_2_030_c.jpg`" width=280 height=160></v-img>
+                    <div class="card-body">
+                      <h3 class="my-3">シエンタ</h3>
+                      <p class="card-text text-uppercase">低燃費, 5人乗り, 駐無料</p>
+                    </div>
+                  </v-card>
+                </v-hover>
               </v-col>
             </a>
           </li>
@@ -213,5 +269,9 @@ img.card-img-top {
 
 .card-body{
     padding: 10px 20px;
+}
+
+.v-card:not(.on-hover) {
+  transition: .2s ease-in-out;
 }
 </style>

@@ -5,6 +5,9 @@ import Top from './pages/Top'
 import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import Post from './pages/Post'
+// import PostLists from './pages/PostLists'
+import PostDetails from './pages/PostDetails'
+import notFound404 from './pages/notFound404'
 
 
 Vue.use(Router);
@@ -28,7 +31,18 @@ const router = new Router({
       path: '/post', 
       component: Post,
     },
-  
+    // { 
+    //   path: '/post-lists', 
+    //   component: PostLists,
+    // },
+    { 
+      path: '/post/:id', 
+      component: PostDetails,
+    },
+    { 
+      path: '*', 
+      component: notFound404,
+    },
   ]
 });
 

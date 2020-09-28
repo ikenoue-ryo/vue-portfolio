@@ -17,6 +17,9 @@ export default{
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
+.back_body{
+  height: 100vh;
+}
 
 </style>
