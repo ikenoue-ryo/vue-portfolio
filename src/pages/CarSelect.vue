@@ -4,247 +4,76 @@
 
     <div class="back_body">
       <h2>Let's Ride {{ car_type.en_name }}</h2>
-
-      <v-container fluid class="back_color">
+      <v-container fluid class="back_color" v-for="post in posts" :key="post.id" style="border-radius: 10px;">
         <v-content>
-          <v-card href="/post/1" style="border">
-          <v-container>
-            <v-layout wrap>
-              <v-flex xs12 sm6 md5>
+          <!-- router-linkの代用 -->
+          <v-list-item :to="`/post/${post.id}`" style="background-color: #fff;">
+            <v-container>
+              <v-layout wrap>
+                <v-flex xs12 sm6 md5>
 
-                <div class="back_size" style="width:300px;">
-                  <v-carousel v-model="model" height="200px" width="300px">
-                    <v-carousel-item
-                      style="width: 300px;"
-                      v-for="(photo) in photos"
-                      :key="photo"
-                    >
-                      <v-sheet
-                        :photo="photo"
-                        tile
+                  <div class="back_size" style="width:300px;">
+                    <v-carousel v-model="model" height="200px" width="300px">
+                      <v-carousel-item
+                        style="width: 300px;"
+                        v-for="(photo) in photos"
+                        :key="photo"
                       >
-                        <v-row
-                          class="fill-height"
-                          align="center"
-                          justify="center"
+                        <v-sheet
+                          :photo="photo"
+                          tile
                         >
-                          <div class="display-3">
-                            <v-img 
-                            :src="photo.image"
-                            max-width=300 class="rounded-lg"
-                            ></v-img>
-                          </div>
-                        </v-row>
-                      </v-sheet>
-                    </v-carousel-item>
-                  </v-carousel>
-                </div>
-
-              </v-flex>
-              <v-flex xs12 sm6 md7>
-                <div class="card_detail">
-                    <div class="card_info">
-                      <h3>福岡市中央区博多区</h3>
-                      <ul>
-                        <li>24h貸し出し可能</li>
-                        <li>クルーズコントロール、カーナビ、TOYOTAセーフティ機能付</li>
-                        <li>TOYOTAセーフティ機能付</li>
-                        <li>定員5人OK</li>
-                      </ul>
-                      <ul class="tag clearfix">
-                        <li>1ヶ月間貸し出しOK</li>
-                        <li>駐車場無料使用OK</li>
-                      </ul>
-                      <div class="price">8,700<span class="yen"> 円/(月額)</span></div>
-                    </div>
+                          <v-row
+                            class="fill-height"
+                            align="center"
+                            justify="center"
+                          >
+                            <div class="display-3">
+                              <v-img 
+                              :src="post.image1"
+                              max-width=300 class="rounded-lg"
+                              ></v-img>
+                            </div>
+                          </v-row>
+                        </v-sheet>
+                      </v-carousel-item>
+                    </v-carousel>
                   </div>
-              </v-flex>
-            </v-layout>
-          </v-container>
-          </v-card>
+
+                </v-flex>
+                <v-flex xs12 sm6 md7>
+                  <div class="card_detail">
+                      <div class="card_info">
+                        <v-row>
+                          <h3>{{ post.address }}</h3>
+                          <v-spacer></v-spacer>
+                          <v-btn
+                            icon
+                            color="pink"
+                          >
+                            <v-icon>mdi-heart</v-icon>
+                          </v-btn>
+                        </v-row>
+
+                        <ul>
+                          <li>{{ post.pr1 }}</li>
+                          <li>{{ post.pr2 }}</li>
+                          <li>{{ post.pr3 }}</li>
+                          <li>{{ post.pr4 }}</li>
+                        </ul>
+                        <ul class="tag clearfix">
+                          <li>{{ post.tag1 }}</li>
+                          <li>{{ post.tag2 }}</li>
+                        </ul>
+                        <div class="price">{{ post.price }}<span class="yen"> 円/(月額)</span></div>
+                      </div>
+                    </div>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-list-item>
         </v-content>
       </v-container>
-
-      <v-container fluid class="back_color">
-        <v-content>
-          <v-card href="/post/1" style="border">
-          <v-container>
-            <v-layout wrap>
-              <v-flex xs12 sm6 md5>
-
-                <div class="back_size" style="width:300px;">
-                  <v-carousel v-model="model" height="200px" width="300px">
-                    <v-carousel-item
-                      style="width: 300px;"
-                      v-for="(photo) in photos"
-                      :key="photo"
-                    >
-                      <v-sheet
-                        :photo="photo"
-                        tile
-                      >
-                        <v-row
-                          class="fill-height"
-                          align="center"
-                          justify="center"
-                        >
-                          <div class="display-3">
-                            <v-img 
-                            :src="photo.image"
-                            max-width=300 class="rounded-lg"
-                            ></v-img>
-                          </div>
-                        </v-row>
-                      </v-sheet>
-                    </v-carousel-item>
-                  </v-carousel>
-                </div>
-
-              </v-flex>
-              <v-flex xs12 sm6 md7>
-                <div class="card_detail">
-                    <div class="card_info">
-                      <h3>福岡市中央区博多区</h3>
-                      <ul>
-                        <li>24h貸し出し可能</li>
-                        <li>クルーズコントロール、カーナビ、TOYOTAセーフティ機能付</li>
-                        <li>TOYOTAセーフティ機能付</li>
-                        <li>定員5人OK</li>
-                      </ul>
-                      <ul class="tag clearfix">
-                        <li>1ヶ月間貸し出しOK</li>
-                        <li>駐車場無料使用OK</li>
-                      </ul>
-                      <div class="price">8,700<span class="yen"> 円/(月額)</span></div>
-                    </div>
-                  </div>
-              </v-flex>
-            </v-layout>
-          </v-container>
-          </v-card>
-        </v-content>
-      </v-container>
-
-      <v-container fluid class="back_color">
-        <v-content>
-          <v-card href="/post/1" style="border">
-          <v-container>
-            <v-layout wrap>
-              <v-flex xs12 sm6 md5>
-
-                <div class="back_size" style="width:300px;">
-                  <v-carousel v-model="model" height="200px" width="300px">
-                    <v-carousel-item
-                      style="width: 300px;"
-                      v-for="(photo) in photos"
-                      :key="photo"
-                    >
-                      <v-sheet
-                        :photo="photo"
-                        tile
-                      >
-                        <v-row
-                          class="fill-height"
-                          align="center"
-                          justify="center"
-                        >
-                          <div class="display-3">
-                            <v-img 
-                            :src="photo.image"
-                            max-width=300 class="rounded-lg"
-                            ></v-img>
-                          </div>
-                        </v-row>
-                      </v-sheet>
-                    </v-carousel-item>
-                  </v-carousel>
-                </div>
-
-              </v-flex>
-              <v-flex xs12 sm6 md7>
-                <div class="card_detail">
-                    <div class="card_info">
-                      <h3>福岡市中央区博多区</h3>
-                      <ul>
-                        <li>24h貸し出し可能</li>
-                        <li>クルーズコントロール、カーナビ、TOYOTAセーフティ機能付</li>
-                        <li>TOYOTAセーフティ機能付</li>
-                        <li>定員5人OK</li>
-                      </ul>
-                      <ul class="tag clearfix">
-                        <li>1ヶ月間貸し出しOK</li>
-                        <li>駐車場無料使用OK</li>
-                      </ul>
-                      <div class="price">8,700<span class="yen"> 円/(月額)</span></div>
-                    </div>
-                  </div>
-              </v-flex>
-            </v-layout>
-          </v-container>
-          </v-card>
-        </v-content>
-      </v-container>
-
-      <v-container fluid class="back_color">
-        <v-content>
-          <v-card href="/post/1" style="border">
-          <v-container>
-            <v-layout wrap>
-              <v-flex xs12 sm6 md5>
-
-                <div class="back_size" style="width:300px;">
-                  <v-carousel v-model="model" height="200px" width="300px">
-                    <v-carousel-item
-                      style="width: 300px;"
-                      v-for="(photo) in photos"
-                      :key="photo"
-                    >
-                      <v-sheet
-                        :photo="photo"
-                        tile
-                      >
-                        <v-row
-                          class="fill-height"
-                          align="center"
-                          justify="center"
-                        >
-                          <div class="display-3">
-                            <v-img 
-                            :src="photo.image"
-                            max-width=300 class="rounded-lg"
-                            ></v-img>
-                          </div>
-                        </v-row>
-                      </v-sheet>
-                    </v-carousel-item>
-                  </v-carousel>
-                </div>
-
-              </v-flex>
-              <v-flex xs12 sm6 md7>
-                <div class="card_detail">
-                    <div class="card_info">
-                      <h3>福岡市中央区博多区</h3>
-                      <ul>
-                        <li>24h貸し出し可能</li>
-                        <li>クルーズコントロール、カーナビ、TOYOTAセーフティ機能付</li>
-                        <li>TOYOTAセーフティ機能付</li>
-                        <li>定員5人OK</li>
-                      </ul>
-                      <ul class="tag clearfix">
-                        <li>1ヶ月間貸し出しOK</li>
-                        <li>駐車場無料使用OK</li>
-                      </ul>
-                      <div class="price">8,700<span class="yen"> 円/(月額)</span></div>
-                    </div>
-                  </div>
-              </v-flex>
-            </v-layout>
-          </v-container>
-          </v-card>
-        </v-content>
-      </v-container>
-
     </div>
 
     
@@ -254,6 +83,7 @@
 <script>
 import AppHeader from '../components/AppHeader';
 import car_types from '../pages/carTypes';
+import posts from '../pages/postLists';
 
 export default {
   components:{
@@ -287,6 +117,18 @@ export default {
     },
     car_type(){
       return car_types.find(car_type => car_type.en_name === this.car_types)
+    },
+    posts(){
+      const post = posts.filter(posts => posts.car_type === this.car_types);
+      if (!posts) {
+        return {
+          author: '見つかりません',
+          car_type: '',
+          title: '',
+          text: '',
+        };
+      }
+      return post
     },
   }
 }
@@ -339,8 +181,8 @@ export default {
 
 .card_info{
   h3{
-    font-size: 1rem;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin: 10px 0;
   }
 
   ul.tag {

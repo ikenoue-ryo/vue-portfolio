@@ -2,10 +2,6 @@
   <div>
     <PostDetails />
     <AppHeader />
-    <!-- <p>{{ author }}</p>
-    <p>{{ car_type }}</p>
-    <p>{{ title }}</p>
-    <p>{{ text }}</p> -->
 
     <div class="back_body">
       <h2>Let's Ride</h2>
@@ -61,7 +57,7 @@
             <v-row>
               <v-col class="blog_text">
                 <h2>お気に入りポイント</h2>
-                <img src="https://lh3.googleusercontent.com/pw/ACtC-3fFxuGkyQ4Ptks6YZFZlxa4nFK-p6MiJqzBZw2xKBy5xapGGJ3wVNKpr8EZg9Og1ygvhTbW_fhaLBTck4pb48gAg5I8FLqeoJrIudbkGrWsg1V94ZY2CrbpJ2vs9oHbfNREoecvsk42en5VNVaHbIuV=w1880-h1410-no?authuser=0">
+                <img :src="post.image1">
                 <ul>
                   <li>24h貸し出しOK</li>
                   <li>アメニティ・設備が豊富</li>
@@ -75,7 +71,7 @@
             <v-row>
               <v-col class="blog_text">
                 <h2>快適で綺麗なシートです！</h2>
-                <img src="https://lh3.googleusercontent.com/pw/ACtC-3dfmA4TDrOrcfUJcsoT31J0_2429e-AZfu0Y3FWTIxuMdER2JGB6J6NsUf_fhwBzDTsEZmT_qqBcHdgyvzw9EWaPTaUchZ32UVw0ls7weCX2zlghD2jWD8NKD8r0XaAh489qTe4VRI7SX35EYzzHO42=w1880-h1410-no?authuser=0">
+                <img :src="post.image2">
                 <p>まだ買ったばかりなので、かなり綺麗な方だと思います。</p>
                 <p>運転席は結構広いのでひざを伸ばしても座ることができますよ。</p>
                 <p>後部座席も乗ってみると意外と広いと思います！</p>
@@ -85,7 +81,7 @@
             <v-row>
               <v-col class="blog_text">
                 <h2>荷物もかなり入ります！</h2>
-                <img src="https://lh3.googleusercontent.com/pw/ACtC-3de3_BtG2nFngd5HA_iKz3YcOWD1DC6zi-DdKEFUUi3K-Md4wzcKjSZVR5FRKuUQpIF-CLCeOSq-co6IYg2KVz72uHdevlSNBqiKMXkXAKbE0k4-_xEP5bQeyfUGIvRhL0ViR48a52zHX9YMh3YUR6J=w1058-h1410-no?authuser=0">
+                <img :src="post.image3">
                 <p>こんな感じで結構広いのでゴルフバックなら3つほど入るような感じです。</p>
               </v-col>
             </v-row>
@@ -93,34 +89,26 @@
           <v-layout wrap class="profile">
             <v-flex xs12 sm6 md2>
               <div class="icon">
-                <img src="https://d20r2glx6euv0l.cloudfront.net/avatar/6ebeed36dc.jpeg">
+                <img :src="post.image1">
               </div>
             </v-flex>
             <v-flex xs12 sm6 md10>
               <div class="pr_profile">
-                <p class="prof_name">長谷川 大輔</p>
+                <p class="prof_name">{{ post.author }}</p>
                 <p>車好きの中でも車を愛している方です！いつも車内を綺麗に掃除するのが日課になってます。笑
                 ぜひ、僕の愛車で旅行などを楽しんでもらえたら嬉しいです！ご質問あれば連絡ください。</p>
               </div>
             </v-flex>
           </v-layout>
 
-          
           <div class="share_price">
-            <!-- Card -->
             <div class="card">
-              <!-- Card image -->
-              <!-- Card content -->
               <div class="card-body">
-                <!-- Title -->
-                <div class="price">8,700<span class="yen"> 円/(月額)</span></div>
-                <!-- Text -->
+                <div class="price">{{ post.price }}<span class="yen"> 円/(月額)</span></div>
                 <p class="card-text">24h以内に指定の場所に返却してください。</p>
-                <!-- Button -->
                 <a href="#"><v-btn color="#2bbbad">予約する</v-btn></a>
               </div>
             </div>
-            <!-- Card -->
           </div>
 
           </v-container>
