@@ -27,7 +27,6 @@ export default{
     userNearby,
     AppFooter,
   }
-
 }
 </script>
 

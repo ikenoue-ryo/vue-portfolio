@@ -6,6 +6,7 @@ import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import Post from './pages/Post'
 // import PostLists from './pages/PostLists'
+import CarSelect from './pages/CarSelect'
 import PostDetails from './pages/PostDetails'
 import notFound404 from './pages/notFound404'
 
@@ -31,6 +32,10 @@ const router = new Router({
       path: '/post', 
       component: Post,
     },
+    { 
+      path: '/select', 
+      component: CarSelect,
+    },
     // { 
     //   path: '/post-lists', 
     //   component: PostLists,
@@ -38,6 +43,10 @@ const router = new Router({
     { 
       path: '/post/:id', 
       component: PostDetails,
+    },
+    { 
+      path: '/:en_name', 
+      component: CarSelect,
     },
     { 
       path: '*', 

@@ -105,7 +105,23 @@
             </v-flex>
           </v-layout>
 
-            
+          
+          <div class="share_price">
+            <!-- Card -->
+            <div class="card">
+              <!-- Card image -->
+              <!-- Card content -->
+              <div class="card-body">
+                <!-- Title -->
+                <div class="price">8,700<span class="yen"> 円/(月額)</span></div>
+                <!-- Text -->
+                <p class="card-text">24h以内に指定の場所に返却してください。</p>
+                <!-- Button -->
+                <a href="#"><v-btn color="#2bbbad">予約する</v-btn></a>
+              </div>
+            </div>
+            <!-- Card -->
+          </div>
 
           </v-container>
         </v-app>
@@ -352,4 +368,49 @@ export default{
    display: block;
    clear: both;
 }
+
+.share_price {
+  background-color: #f5f5f5;
+  margin: 36px;
+
+  .card {
+    width: 230px;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 30px;
+    right: 110px;
+    z-index: 10;
+    padding: 20px;
+    border: 1px solid #eee;
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  }
+
+  .card-body{
+    .v-btn{
+      background: #2bbbad;
+      color: #fff;
+      font-size: 1rem;
+      padding: 10px;
+      width: 100%;
+    }
+
+    a{
+      text-decoration: none;
+    }
+  }
+
+  .price {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+
+  .price span.yen {
+    font-size: 0.9rem;
+  }
+
+}
+
 </style>

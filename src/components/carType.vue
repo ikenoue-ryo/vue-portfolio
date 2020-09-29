@@ -17,7 +17,7 @@
       >
         <v-container fluid pa-0 class="mt-5">
           <v-row>
-            <v-col cols="12" md="4" class="pa-2">
+            <v-col cols="12" md="4" class="pa-2" v-for="car_type in car_types" :key="car_type.id">
               <v-hover
                 v-slot:default="{ hover }"
                 close-delay="200"
@@ -25,17 +25,29 @@
                 <v-card 
                   class="py-3 { 'on-hover': hover }"
                   :elevation="hover ? 12 : 2"
-                  href="/post/1"
+                  :href="car_type.en_name"
                 >
-                  <v-img :src="`https://toyota.jp/pages/contents/corollasport/001_p_001/4.0/image/car-viewer/43_1_5/43_1_5_030_c.jpg`" width=280 height=160></v-img>
+                  <!-- <img v-bind:src="car_type.images"/> -->
+                  <v-img :src="car_type.images" width=280 height=160></v-img>
                   <div class="card-body">
-                    <h3 class="my-3">カローラ</h3>
+                    <h3 class="my-3">{{ car_type.jp_name }}</h3>
                     <p class="card-text text-uppercase">低燃費, 5人乗り, 駐無料</p>
                   </div>
                 </v-card>
               </v-hover>
+
+              <!-- <ul>
+              <template v-for="car_type in car_types">
+                <li :key="car_type.id">
+                  <router-link :to="`/car-type/${car_type.id}`">
+                  {{ car_type.name }}
+                  </router-link>
+                </li>
+              </template>
+              </ul> -->
+
             </v-col>
-            <v-col cols="12" md="4" class="pa-2">
+            <!-- <v-col cols="12" md="4" class="pa-2">
               <v-hover
                 v-slot:default="{ hover }"
                 close-delay="200"
@@ -43,7 +55,7 @@
                 <v-card 
                   class="py-3 { 'on-hover': hover }"
                   :elevation="hover ? 12 : 2"
-                  href="/post/2"
+                  href="/car-type/2"
                 >
                   <v-img :src="`https://toyota.jp/pages/contents/prius/004_p_007/4.0/image/car-viewer/24_5_7/24_5_7_030_c.jpg`" width=280 height=160></v-img>
                   <div class="card-body">
@@ -61,7 +73,7 @@
                 <v-card 
                   class="py-3 { 'on-hover': hover }"
                   :elevation="hover ? 12 : 2"
-                  href="/post/3"
+                  href="/car-type/3"
                 >
                   <v-img :src="`https://toyota.jp/pages/contents/voxy/003_p_007/4.0/image/car-viewer/11_1_1/11_1_1_030_c.jpg`" width=280 height=160></v-img>
                   <div class="card-body">
@@ -82,7 +94,7 @@
                 <v-card 
                   class="py-3 { 'on-hover': hover }"
                   :elevation="hover ? 12 : 2"
-                  href="/post/1"
+                  href="/car-type/4"
                 >
                   <v-img :src="`https://toyota.jp/pages/contents/sienta/002_p_003/4.0/image/car-viewer/15_24_2/15_24_2_030_c.jpg`" width=280 height=160></v-img>
                   <div class="card-body">
@@ -100,7 +112,7 @@
                 <v-card 
                   class="py-3 { 'on-hover': hover }"
                   :elevation="hover ? 12 : 2"
-                  href="/post/2"
+                  href="/car-type/5"
                 >
                   <v-img :src="`https://toyota.jp/pages/contents/aqua/001_p_011/4.0/image/car-viewer/1_6_9/1_6_9_030_c.jpg`" width=280 height=160></v-img>
                   <div class="card-body">
@@ -118,7 +130,7 @@
                 <v-card 
                   class="py-3 { 'on-hover': hover }"
                   :elevation="hover ? 12 : 2"
-                  href="/post/3"
+                  href="/car-type/6"
                 >
                   <v-img :src="`https://toyota.jp/pages/contents/alphard/003_p_009/image/car-viewer/9_20_6/9_20_6_030_c.jpg`" width=280 height=160></v-img>
                   <div class="card-body">
@@ -127,7 +139,7 @@
                   </div>
                 </v-card>
               </v-hover>
-            </v-col>
+            </v-col> -->
           </v-row>
         </v-container>
       </v-tab-item>
@@ -135,9 +147,16 @@
   </div>
 </template>
 
-<script>
-export default{
 
+<script>
+import car_types from '../pages/carTypes';
+
+export default{
+  computed:{
+    car_types(){
+      return car_types;
+    }
+  },
 }
 </script>
 
@@ -162,6 +181,10 @@ export default{
 
   .card-body{
     padding: 10px 20px;
+
+    h3{
+      color: #000;
+    }
 
     p{
       font-size: 0.9rem;

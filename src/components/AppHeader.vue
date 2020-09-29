@@ -5,7 +5,18 @@
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <div class="back-color">
+          <v-row>
+            <div class="search_form">
+              <div class="search_icon">
+                <v-fa :icon="['fas', 'search']" class="search_icon" />
+              </div>
+              <v-text-field
+                label="検索..."
+              >
+              </v-text-field>
+            </div>
           <v-btn href="signup" class="start">はじめる</v-btn>
+          </v-row>
         </div>
       </v-toolbar-items>
     </v-layout>
@@ -48,7 +59,29 @@ export default{
       margin-top: 8px;
     }
   }
+}
 
+.back-color{
+  .search_form{
+    position: relative;
+    bottom: 5px;
+
+    .v-input{
+      display: inline-block;
+      float: left;
+      margin-right: 10px;
+      padding-top: 10px;
+      height: 43px;
+    }
+
+    .search_icon{
+      font-size: 27px !important;
+      width: 33px;
+      display: inline-block;
+      float: left;
+      padding: 12px 6px 0 5px;
+    }
+  }
 }
 
 #app{

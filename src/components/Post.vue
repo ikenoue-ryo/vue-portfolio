@@ -8,27 +8,24 @@
       max-width="800"
     >
 
-    <div class="file_input">
-      <input type="file" ref="preview" @change="uploadFile" v-show="show">
-    </div>
+      <div class="file_input">
+        <input type="file" ref="preview" @change="uploadFile" v-show="show">
+      </div>
 
-    <div class="image_area" v-if="url" style="position:relative">
-      <div style="position:absolute" @click="deletePreview"><v-icon color="white">mdi-close</v-icon></div>
-      <img :src="url">
-    </div>
-
-
-    <p v-for="todo in todos" :key="todo">{{todo.text}}</p>
+      <div class="image_area" v-if="url" style="position:relative">
+        <div style="position:absolute" @click="deletePreview"><v-icon color="white">mdi-close</v-icon></div>
+        <img :src="url">
+      </div>
 
 
-<div class="group input_area">
-   <input id="text3" type="text" placeholder="入力する" ref="text1" v-model="todoText" @keydown.enter="addTodo">
-   <div class="text_underline"></div>
-</div>
-
+      <p v-for="todo in todos" :key="todo">{{todo.text}}</p>
+      
+      <div class="group input_area">
+        <input id="text3" type="text" placeholder="入力する" ref="text1" v-model="todoText" @keydown.enter="addTodo">
+        <div class="text_underline"></div>
+      </div>
     </v-card>
   </div>
-
 </template>
 
 
@@ -190,5 +187,10 @@ p{
   // left: 330px;
   font-size: 3rem;
 }
+
+.back_body{
+  height: 100vh;
+}
+
 
 </style>
