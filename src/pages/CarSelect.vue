@@ -4,93 +4,85 @@
 
     <div class="back_body">
       <h2>Let's Ride {{ car_type.en_name }}</h2>
-      <v-container fluid class="back_color" v-for="post in posts" :key="post.id" style="border-radius: 10px;">
-        <v-content>
-          <!-- router-linkの代用 -->
-          <v-list-item :to="`/post/${post.id}`" style="background-color: #fff;">
-            <v-container>
-              <v-layout wrap>
-                <v-flex xs12 sm6 md5>
-
-                  <div class="back_size" style="width:300px;">
-                    <v-carousel v-model="model" height="200px" width="300px">
-                      <v-carousel-item
-                        style="width: 300px;"
-                        v-for="(photo) in photos"
-                        :key="photo"
-                      >
-                        <v-sheet
-                          :photo="photo"
-                          tile
-                        >
-                          <v-row
-                            class="fill-height"
-                            align="center"
-                            justify="center"
-                          >
-                            <div class="display-3">
-                              <v-img 
-                              :src="post.image1"
-                              max-width=300 class="rounded-lg"
-                              ></v-img>
+          <v-list>
+            <v-list-item v-for="list in displayLists" :key="list.index">
+                <v-container fluid class="back_color">
+                  <v-content>
+                    <v-list-item :to="`/post/${list.id}`" style="background-color: #fff; border-radius:10px;">
+                      <v-container>
+                        <v-layout wrap>
+                          <v-flex xs12 sm6 md5>
+                            <div class="back_size">
+                              <img :src="list.image1">
                             </div>
-                          </v-row>
-                        </v-sheet>
-                      </v-carousel-item>
-                    </v-carousel>
-                  </div>
+                          </v-flex>
+                          <v-flex xs12 sm6 md7 px-5>
+                            <div class="card_detail">
+                                <div class="card_info">
+                                  <h3>{{ list.address }}</h3>
+                                  <v-btn
+                                    large
+                                    icon
+                                    color="pink"
+                                  >
+                                    <v-icon>mdi-heart</v-icon>
+                                  </v-btn>
 
-                </v-flex>
-                <v-flex xs12 sm6 md7>
-                  <div class="card_detail">
-                      <div class="card_info">
-                        <v-row>
-                          <h3>{{ post.address }}</h3>
-                          <v-spacer></v-spacer>
-                          <v-btn
-                            icon
-                            color="pink"
-                          >
-                            <v-icon>mdi-heart</v-icon>
-                          </v-btn>
-                        </v-row>
+                                  <ul>
+                                    <li>{{ list.pr1 }}</li>
+                                    <li>{{ list.pr2 }}</li>
+                                    <li>{{ list.pr3 }}</li>
+                                    <li>{{ list.pr4 }}</li>
+                                  </ul>
+                                  <ul class="tag clearfix">
+                                    <li>{{ list.tag1 }}</li>
+                                    <li>{{ list.tag2 }}</li>
+                                  </ul>
+                                  <div class="price">{{ list.price }}
+                                    <span class="yen"> 円/(月額)</span>
+                                  </div>
+                                </div>
+                            </div>
+                          </v-flex>
 
-                        <ul>
-                          <li>{{ post.pr1 }}</li>
-                          <li>{{ post.pr2 }}</li>
-                          <li>{{ post.pr3 }}</li>
-                          <li>{{ post.pr4 }}</li>
-                        </ul>
-                        <ul class="tag clearfix">
-                          <li>{{ post.tag1 }}</li>
-                          <li>{{ post.tag2 }}</li>
-                        </ul>
-                        <div class="price">{{ post.price }}<span class="yen"> 円/(月額)</span></div>
-                      </div>
-                    </div>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-list-item>
-        </v-content>
-      </v-container>
-    </div>
+                        </v-layout>
+                      </v-container>
+                    </v-list-item>
+                  </v-content>
+                </v-container>
+            </v-list-item>
+          </v-list>
 
+          <!-- ページネーション -->
+          <div class="text-center pagenation">
+            <v-pagination
+              v-model="page"
+              :length="length"
+              prev-icon="mdi-menu-left"
+              next-icon="mdi-menu-right"
+              @input="pageChange"
+            ></v-pagination>
+          </div>
+        </div>
     
+    <AppFooter />
   </v-app>
 </template>
 
 <script>
 import AppHeader from '../components/AppHeader';
+import AppFooter from '../components/AppFooter';
 import car_types from '../pages/carTypes';
 import posts from '../pages/postLists';
 
 export default {
   components:{
     AppHeader,
+    AppFooter,
   },
   data () {
     return {
+    // カルーセル
     model: 0,
     photos: [
         {
@@ -109,6 +101,12 @@ export default {
           image: 'https://lh3.googleusercontent.com/pw/ACtC-3fcS4fX1FG55xLgw55LvePc5CpqLW1HN5ruL3Awcu8mvRCq-YuJ0E4pnzgTJ5reJ1FOmtYtQ6RaXrcS6LjvOhySGSu-cuipRO5sqrJbnFq_cnbh4ZHb1vXCEFJl71ilcct9oDCe6DjngIY40x5DSsjA=w1880-h1410-no?authuser=0'
         },
       ],
+    // ページネーション
+    page: 1,
+    length: 0,
+    lists: [],
+    displayLists: [],
+    pageSize: 3,
     }
   },
   computed:{
@@ -130,6 +128,18 @@ export default {
       }
       return post
     },
+  },
+  methods: {
+    pageChange: function(pageNumber){
+      this.displayLists = this.lists.slice(this.pageSize*(pageNumber -1), this.pageSize*(pageNumber));
+    }
+  },
+  mounted: function(){
+    this.lists = this.posts
+
+    this.length = Math.ceil(this.lists.length/this.pageSize);
+
+    this.displayLists = this.lists.slice(this.pageSize*(this.page -1), this.pageSize*(this.page));
   }
 }
 </script>
@@ -138,16 +148,14 @@ export default {
 <style lang="scss" scoped>
 .container{
   background: #fff;
-
   a{
-    padding: 20px;
+    padding: 10px;
   }
 }
 
 .back_body{
   background-color: #eee;
   overflow: hidden;
-  
 
   h2{
     font-size: 45px;
@@ -160,12 +168,24 @@ export default {
     background-color: #eee;
     overflow: hidden;
     width: 900px;
+    
+    .v-content{
+      border: 1px solid #ddd;
+      border-radius:10px;
+    }
+  }
+
+  .v-list{
+    background-color: #eee;
+    padding: 0;
   }
 }
 
 .header_class {
   font-family: Rubik, "Noto Sans JP", sans-serif;
 }
+
+
 
 .price {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
@@ -192,7 +212,7 @@ export default {
     li {
         display: inline-block;
         float: left;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         margin: 0 5px;
         padding: 3px 10px;
         border-radius: 6px;
@@ -201,8 +221,35 @@ export default {
         font-weight: 600;
         position: relative;
         top: 43px;
+        &:empty{
+          display: none;
+        }
     }
   }
+}
+
+.pagenation{
+  margin: 50px;
+}
+
+.back_size{
+  width: 100%;
+
+  img{
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+.v-image{
+    z-index: 10;
+}
+
+.v-btn{
+  display: inline;
+  float: right;
+  bottom: 42px;
+  left: 20px;
 }
 
 .clearfix::after {
@@ -210,5 +257,6 @@ export default {
    display: block;
    clear: both;
 }
+
 
 </style>

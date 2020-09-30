@@ -24,16 +24,31 @@
             <v-layout wrap class="main_img">
                 <div>
                   <v-carousel cycle interval="4000" class="rounded-lg">
-                    <v-carousel-item
-                      v-for="(photo) in photos"
-                      :key="photo"
-                    >
+                    <v-carousel-item>
                       <v-row>
                         <v-col class="mt-3">
-                          <v-img 
-                          :src="photo.image"
-                          max-width=680 class="rounded-lg"
-                          ></v-img>
+                          <v-img :src="post.image1" class="rounded-lg main_image"></v-img>
+                        </v-col>
+                      </v-row>
+                    </v-carousel-item>
+                    <v-carousel-item>
+                      <v-row>
+                        <v-col class="mt-3">
+                          <v-img :src="post.image2" class="rounded-lg main_image"></v-img>
+                        </v-col>
+                      </v-row>
+                    </v-carousel-item>
+                    <v-carousel-item>
+                      <v-row>
+                        <v-col class="mt-3">
+                          <v-img :src="post.image3" class="rounded-lg main_image"></v-img>
+                        </v-col>
+                      </v-row>
+                    </v-carousel-item>
+                    <v-carousel-item>
+                      <v-row>
+                        <v-col class="mt-3">
+                          <v-img :src="post.image4" class="rounded-lg main_image"></v-img>
                         </v-col>
                       </v-row>
                     </v-carousel-item>
@@ -43,12 +58,12 @@
 
             <v-row>
               <v-col class="blog_text">
-              <h2>フィット基本情報！</h2>
+              <h2>{{ post.car_type }}の基本情報！</h2>
                 <ul>
                   <li>満タン時の走行距離：20km</li>
                   <li>駆動方式：2WD</li>
                   <li>色：ホワイト</li>
-                  <li>エンジン：ガゾリン</li>
+                  <li>エンジン：ガソリン</li>
                   <li>定員数：5名</li>
                 </ul>
               </v-col>
@@ -115,9 +130,11 @@
         </v-app>
       </div>
 
-      <AppFooter />
 
     </div>
+
+    
+  <PrFooter />
   </div>
 </template>
 
@@ -125,15 +142,15 @@
 <script>
 import PostDetails from '../components/PostDetails'
 import AppHeader from '../components/AppHeader'
+import PrFooter from '../components/PrFooter'
 import posts from '../pages/postLists';
-import AppFooter from '../components/AppFooter'
 
 
 export default{
   components:{
     PostDetails,
     AppHeader,
-    AppFooter,
+    PrFooter,
   },
   data () {
       return {
@@ -398,7 +415,13 @@ export default{
   .price span.yen {
     font-size: 0.9rem;
   }
-
 }
+
+.main_image{
+  max-width: 680px;
+  height: 500px;
+}
+
+
 
 </style>

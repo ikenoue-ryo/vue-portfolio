@@ -3,20 +3,6 @@ const posts = [
     id: 1,
     author: '中田 大輔',
     address: '福岡県福岡市博多区博多駅前',
-    main_images:[
-      {
-        photo: 'https://response.jp/imgs/thumb_h2/1368463.jpg'
-      },
-      {
-        photo: 'https://toyota.jp/pages/contents/prius/004_p_007/4.0/image/top_design_ext.jpg'
-      },
-      {
-        photo: 'https://motor-fan.jp/images/articles/10006723/big_main10006723_20181128205859000000.png'
-      },
-      {
-        photo: 'https://toyota.jp/pages/contents/prius/004_p_007/4.0/image/top_conductor_perf.jpg'
-      },
-    ],
     image1: 'https://response.jp/imgs/thumb_h2/1368463.jpg',
     image2: 'https://toyota.jp/pages/contents/prius/004_p_007/4.0/image/top_design_ext.jpg',
     image3: 'https://motor-fan.jp/images/articles/10006723/big_main10006723_20181128205859000000.png',
@@ -39,7 +25,8 @@ const posts = [
     image1: 'https://response.jp/imgs/thumb_h2/1460324.jpg',
     image2: 'https://www.webcg.net/mwimgs/0/7/-/img_0734dcd3f4313fc03ce1c972541182de183262.jpg',
     image3: 'https://motor-fan.jp/images/cars/1858/big_20191007204634000000.jpg',
-    image4: 'https://toyokeizai.net/mwimgs/d/9/-/img_d929ff5a1bfe3a9edc4c6fc63c8afb25169634.jpg',    pr1: 'カーナビ、ETC付き',
+    image4: 'https://toyokeizai.net/mwimgs/d/9/-/img_d929ff5a1bfe3a9edc4c6fc63c8afb25169634.jpg',
+    pr1: '24h貸し出し可能',
     pr2: '1ヶ月貸し出せます',
     pr3: '駐車場付き',
     pr4: '',
@@ -55,6 +42,9 @@ const posts = [
     author: '松井',
     address: '福岡県福岡市中央区天神',
     image1: 'https://www.carsensor.net/contents/article_images/_64427/0026.jpg',
+    image2: 'https://www.webcg.net/mwimgs/0/7/-/img_0734dcd3f4313fc03ce1c972541182de183262.jpg',
+    image3: 'https://motor-fan.jp/images/cars/1858/big_20191007204634000000.jpg',
+    image4: 'https://toyokeizai.net/mwimgs/d/9/-/img_d929ff5a1bfe3a9edc4c6fc63c8afb25169634.jpg',
     pr1: '24h貸し出し可能',
     pr2: 'クルーズコントロール、カーナビ、TOYOTAセーフティ機能付',
     pr3: 'TOYOTAセーフティ機能付',
@@ -71,6 +61,9 @@ const posts = [
     author: '児玉',
     address: '東京都世田谷区六本木',
     image1: 'https://www.autocar.jp/wp-content/uploads/2020/06/toyota-corolla-trek-2020-uk_200606_1.jpg',
+    image2: 'https://www.webcg.net/mwimgs/0/7/-/img_0734dcd3f4313fc03ce1c972541182de183262.jpg',
+    image3: 'https://motor-fan.jp/images/cars/1858/big_20191007204634000000.jpg',
+    image4: 'https://toyokeizai.net/mwimgs/d/9/-/img_d929ff5a1bfe3a9edc4c6fc63c8afb25169634.jpg',
     pr1: 'カーナビ、ETC付き',
     pr2: '1ヶ月貸し出せます',
     pr3: '',
@@ -87,6 +80,9 @@ const posts = [
     author: '小原',
     address: '福岡県北九州市板前',
     image1: 'https://img.bestcarweb.jp/wp-content/uploads/2019/11/20174319/IKE_0930-1021.jpg',
+    image2: 'https://www.webcg.net/mwimgs/0/7/-/img_0734dcd3f4313fc03ce1c972541182de183262.jpg',
+    image3: 'https://motor-fan.jp/images/cars/1858/big_20191007204634000000.jpg',
+    image4: 'https://toyokeizai.net/mwimgs/d/9/-/img_d929ff5a1bfe3a9edc4c6fc63c8afb25169634.jpg',
     pr1: '24h貸し出し可能',
     pr2: 'クルーズコントロール、カーナビ、TOYOTAセーフティ機能付',
     pr3: 'TOYOTAセーフティ機能付',
@@ -103,6 +99,9 @@ const posts = [
     author: '坂下',
     address: '福岡県福岡市博多区住吉',
     image1: 'https://www.car-and-driver.jp/newcar/assets_c/2020/05/85c9734a88fb0c3161777b77a737f951348e8a5f-thumb-650x450-15007.jpg',
+    image2: 'https://www.webcg.net/mwimgs/0/7/-/img_0734dcd3f4313fc03ce1c972541182de183262.jpg',
+    image3: 'https://motor-fan.jp/images/cars/1858/big_20191007204634000000.jpg',
+    image4: 'https://toyokeizai.net/mwimgs/d/9/-/img_d929ff5a1bfe3a9edc4c6fc63c8afb25169634.jpg',
     pr1: 'カーナビ、ETC付き',
     pr2: '1ヶ月貸し出せます',
     pr3: '駐車場付き',
