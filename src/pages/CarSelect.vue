@@ -13,12 +13,12 @@
                         <v-layout wrap>
                           <v-flex xs12 sm6 md5>
                             <div class="back_size">
-                              <img :src="list.image1">
+                              <img :src="list.main_images[0].photo">
                             </div>
                           </v-flex>
                           <v-flex xs12 sm6 md7 px-5>
                             <div class="card_detail">
-                                <div class="card_info">
+                                <div class="card_info clearfix">
                                   <h3>{{ list.address }}</h3>
                                   <v-btn
                                     large
@@ -29,14 +29,14 @@
                                   </v-btn>
 
                                   <ul>
-                                    <li>{{ list.pr1 }}</li>
-                                    <li>{{ list.pr2 }}</li>
-                                    <li>{{ list.pr3 }}</li>
-                                    <li>{{ list.pr4 }}</li>
+                                    <li v-if="list.pr1">{{ list.pr1 }}</li>
+                                    <li v-if="list.pr2">{{ list.pr2 }}</li>
+                                    <li v-if="list.pr3">{{ list.pr3 }}</li>
+                                    <li v-if="list.pr4">{{ list.pr4 }}</li>
                                   </ul>
-                                  <ul class="tag clearfix">
-                                    <li>{{ list.tag1 }}</li>
-                                    <li>{{ list.tag2 }}</li>
+                                  <ul class="tag">
+                                    <li v-if="list.tag1">{{ list.tag1 }}</li>
+                                    <li v-if="list.tag2">{{ list.tag2 }}</li>
                                   </ul>
                                   <div class="price">{{ list.price }}
                                     <span class="yen"> 円/(月額)</span>
@@ -193,6 +193,9 @@ export default {
   font-weight: 500;
   margin: 10px 0;
   text-align: right;
+  position: absolute;
+  bottom: 33px;
+  right: 20px;
 
   span.yen {
     font-size: 0.9rem;
@@ -200,18 +203,27 @@ export default {
 }
 
 .card_info{
+  width: 100%;
+  height: 185px;
+
   h3{
     font-size: 1.2rem;
     margin: 10px 0;
+  }
+  
+  ul{
+    font-size: 1.1rem;
   }
 
   ul.tag {
     margin: 0;
     padding: 0;
+    position: absolute;
+    bottom: 40px;
+    width: 37%;
 
     li {
         display: inline-block;
-        float: left;
         font-size: 0.9rem;
         margin: 0 5px;
         padding: 3px 10px;
@@ -219,11 +231,7 @@ export default {
         font-weight: 500;
         border: solid 2px #dce4ec;
         font-weight: 600;
-        position: relative;
-        top: 43px;
-        &:empty{
-          display: none;
-        }
+
     }
   }
 }

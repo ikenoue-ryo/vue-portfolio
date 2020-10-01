@@ -24,31 +24,10 @@
             <v-layout wrap class="main_img">
                 <div>
                   <v-carousel cycle interval="4000" class="rounded-lg">
-                    <v-carousel-item>
+                    <v-carousel-item v-for="(image, index) in post.main_images" :key="index">
                       <v-row>
                         <v-col class="mt-3">
-                          <v-img :src="post.image1" class="rounded-lg main_image"></v-img>
-                        </v-col>
-                      </v-row>
-                    </v-carousel-item>
-                    <v-carousel-item>
-                      <v-row>
-                        <v-col class="mt-3">
-                          <v-img :src="post.image2" class="rounded-lg main_image"></v-img>
-                        </v-col>
-                      </v-row>
-                    </v-carousel-item>
-                    <v-carousel-item>
-                      <v-row>
-                        <v-col class="mt-3">
-                          <v-img :src="post.image3" class="rounded-lg main_image"></v-img>
-                        </v-col>
-                      </v-row>
-                    </v-carousel-item>
-                    <v-carousel-item>
-                      <v-row>
-                        <v-col class="mt-3">
-                          <v-img :src="post.image4" class="rounded-lg main_image"></v-img>
+                          <v-img :src="image.photo" class="rounded-lg main_image"></v-img>
                         </v-col>
                       </v-row>
                     </v-carousel-item>
@@ -72,7 +51,7 @@
             <v-row>
               <v-col class="blog_text">
                 <h2>お気に入りポイント</h2>
-                <img :src="post.image1">
+                <img :src="post.main_images[0].photo">
                 <ul>
                   <li>24h貸し出しOK</li>
                   <li>アメニティ・設備が豊富</li>
@@ -86,7 +65,7 @@
             <v-row>
               <v-col class="blog_text">
                 <h2>快適で綺麗なシートです！</h2>
-                <img :src="post.image2">
+                <img :src="post.main_images[1].photo">
                 <p>まだ買ったばかりなので、かなり綺麗な方だと思います。</p>
                 <p>運転席は結構広いのでひざを伸ばしても座ることができますよ。</p>
                 <p>後部座席も乗ってみると意外と広いと思います！</p>
@@ -96,7 +75,7 @@
             <v-row>
               <v-col class="blog_text">
                 <h2>荷物もかなり入ります！</h2>
-                <img :src="post.image3">
+                <img :src="post.main_images[2].photo">
                 <p>こんな感じで結構広いのでゴルフバックなら3つほど入るような感じです。</p>
               </v-col>
             </v-row>
@@ -104,7 +83,7 @@
           <v-layout wrap class="profile">
             <v-flex xs12 sm6 md2>
               <div class="icon">
-                <img :src="post.image1">
+                <img :src="post.main_images[3].photo">
               </div>
             </v-flex>
             <v-flex xs12 sm6 md10>
