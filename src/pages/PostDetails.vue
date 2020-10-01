@@ -38,59 +38,52 @@
             <v-row>
               <v-col class="blog_text">
               <h2>{{ post.car_type }}の基本情報！</h2>
-                <ul>
-                  <li>満タン時の走行距離：20km</li>
-                  <li>駆動方式：2WD</li>
-                  <li>色：ホワイト</li>
-                  <li>エンジン：ガソリン</li>
-                  <li>定員数：5名</li>
+                <ul v-for="(car, index) in post.car_info" :key="index">
+                  <li>{{ car.infomation }}</li>
                 </ul>
               </v-col>
             </v-row>
 
             <v-row>
               <v-col class="blog_text">
-                <h2>お気に入りポイント</h2>
+                <h2>お気に入りポイント①</h2>
                 <img :src="post.main_images[0].photo">
-                <ul>
-                  <li>24h貸し出しOK</li>
-                  <li>アメニティ・設備が豊富</li>
-                  <li>クルーズコントロールでエコ運転</li>
-                  <li>走行中が静かで快適</li>
-                  <li>通勤や旅行に最適</li>
+                <ul v-for="(car, index) in post.car_recommend1" :key="index">
+                  <li>{{ car.point }}</li>
                 </ul>
               </v-col>
             </v-row>
 
             <v-row>
               <v-col class="blog_text">
-                <h2>快適で綺麗なシートです！</h2>
+                <h2>お気に入りポイント②</h2>
                 <img :src="post.main_images[1].photo">
-                <p>まだ買ったばかりなので、かなり綺麗な方だと思います。</p>
-                <p>運転席は結構広いのでひざを伸ばしても座ることができますよ。</p>
-                <p>後部座席も乗ってみると意外と広いと思います！</p>
+                <div v-for="(car, index) in post.car_recommend2" :key="index">
+                  <p>{{ car.point }}</p>
+                </div>
               </v-col>
             </v-row>
 
             <v-row>
               <v-col class="blog_text">
-                <h2>荷物もかなり入ります！</h2>
+                <h2>お気に入りポイント③</h2>
                 <img :src="post.main_images[2].photo">
-                <p>こんな感じで結構広いのでゴルフバックなら3つほど入るような感じです。</p>
+                <div v-for="(car, index) in post.car_recommend3" :key="index">
+                  <p>{{ car.point }}</p>
+                </div>
               </v-col>
             </v-row>
 
-          <v-layout wrap class="profile">
+          <v-layout wrap class="profile" v-for="(user, index) in post.user_info" :key="index">
             <v-flex xs12 sm6 md2>
               <div class="icon">
-                <img :src="post.main_images[3].photo">
+                <img :src="user.icon">
               </div>
             </v-flex>
             <v-flex xs12 sm6 md10>
               <div class="pr_profile">
-                <p class="prof_name">{{ post.author }}</p>
-                <p>車好きの中でも車を愛している方です！いつも車内を綺麗に掃除するのが日課になってます。笑
-                ぜひ、僕の愛車で旅行などを楽しんでもらえたら嬉しいです！ご質問あれば連絡ください。</p>
+                <p class="prof_name">{{ user.name }}</p>
+                <p>{{ user.pr }}</p>
               </div>
             </v-flex>
           </v-layout>
@@ -291,6 +284,10 @@ export default{
 
     ul{
       line-height: 2.5;
+    }
+
+    p{
+      line-height: 2;
     }
   }
 }
